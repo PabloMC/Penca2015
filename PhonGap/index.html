@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<link href="themes/penca.min.css" rel="stylesheet" type="text/css">
+<link href="themes/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<link href="themes/estilos.css" rel="stylesheet" type="text/css">
+<script src="js/libs/jquery.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/md5.min.js"></script>
+<script src="js/codigo.js"></script>
+</head>
+
+<body data-theme="b">
+<div data-role="panel" class="ui-panel" data-theme="d" data-display="overlay" data-position="right" id="panel">
+<p id="username">Usuario</p>
+<p hidden="true" id="userId">ID</p>
+      <ul data-role="listview" data-split-icon="arrow-r">
+        <li data-icon="home"><a href="#home">Inicio</a><a href="#home">Inicio</a></li>
+        <li data-icon="user"><a href="#login">Log In</a><a href="#login">Log In</a></li>
+        <li data-icon="calendar"><a href="#matches" class="partidos">Partidos</a><a href="#matches" class="partidos">Partidos</a></li>
+        <li data-icon="star"><a href="#bets">Apostar</a><a href="#bets">Apostar</a></li>
+        <li data-icon="gear"><a href="#perfil">Perfil</a><a href="#perfil">Perfil</a></li>
+      </ul>
+   
+	</div>
+    <div id="home" data-role="page" data-theme="c">
+  <div data-role="header">
+    <h1>Inicio</h1>
+    <a href="#panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext">Panel</a>
+    
+  </div>
+  <div data-role="content">
+    <!--<ul data-role="listview" data-inset="true">
+      <li data-icon="home" class="mainBtn homeBtn"><a href="#">Inicio</a></li>
+      <li data-icon="user" class="mainBtn logBtn" ><a href="#">Log In</a></li>
+      <li data-icon="grid" class="mainBtn matchBtn"><a href="#">Partidos</a></li>
+      <li data-icon="star" class="mainBtn betBtn"><a href="#">Apuestas</a></li>
+      <li data-icon="gear" class="mainBtn confBtn"><a href="#">Config</a></li>
+    </ul>-->
+  
+   <div class="homeScreen">
+   
+       <a href="#userBets" data-transition="fade" class="mainBtn homeBtn " >My Bets<br><strong >Mis Apuestas</strong><p ></p></a> 
+       <a href="#login" data-transition="fade" class="mainBtn logBtn ui-icon-user">Log In<br><strong>Log In</strong></a> 
+       <a href="#matches" class="mainBtn matchBtn partidos ui-icon-calendar" data-transition="fade">Matches<br><strong>Partidos</strong></a> 
+       <a href="#bets" data-transition="fade" class="mainBtn betBtn ui-icon-shop"><span>Bets<br><strong>Apuestas</strong></span></a> 
+       <a href="#perfil" data-transition="fade" class="mainBtn confBtn ui-icon-gear"><span>Profile<br><strong>Perfil</strong></span></a>
+   
+   </div>
+  </div>
+  <div data-role="footer">
+    <h4>Penca 2015  --  PC</h4>
+  </div>
+</div>
+<div id="matches" data-role="page" data-theme="c">
+  <div data-role="header">
+    <h1>Partidos</h1>
+    <a href="#panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext">Panel</a>
+  </div>
+  <div data-role="content">
+ <table data-role="table" id="table-custom-2" data-filter="true" data-filter-theme="b" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+    <thead>
+      <tr>
+        <th data-priority="2">Grupo</th>
+        <th>Partido</th>
+        <th data-priority="3">Fecha</th>
+        <th data-priority="1">Hora</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="tblMatches">
+      <tr>
+        <th>Grupo</th>
+        <td>Partido</td>
+        <td>Fecha</td>
+        <td>Hora</td>
+        <td><button data-icon="forward" data-iconpos="notext">bet</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+  <div data-role="footer">
+    <h4>Penca 2015  --  PC
+      
+    </h4>
+  </div>
+  
+</div>
+<div id="login" data-role="page" data-theme="b" data-dialog="true" data-close-btn="right">
+        <div data-role="header">
+          <h1>Log In</h1>
+        </div>
+        <div data-role="content">
+          <div data-role="fieldcontain">
+            <label for="txtNombre">Nombre:</label>
+            <input name="txtNombre" type="text" required id="txtNombre" autocomplete="on" value=""  />
+          </div>
+          <div data-role="fieldcontain">
+              <label for="txtMail">Email:</label>
+              <input name="txtMail" type="email" required id="txtMail" autocomplete="on" value=""  />
+            </div>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="txtPass">Password:</label>
+            <input name="txtPass" type="password" required id="txtPass" autocomplete="on" value=""  />
+          </div>
+          <p id="errorRegistro" ></p>
+          <div data-role="controlgroup" data-type="horizontal">
+            <button data-icon="check" data-iconpos="left" id="btnLogIn">LogIn</button>
+            <button data-icon="delete" data-iconpos="right">Cancelar</button>
+          </div>
+        
+        
+        </div>
+        <div data-role="footer">
+          <h4>Penca 2015  --  PC</h4>
+        </div>
+      </div>
+<div id="bets" data-role="page" data-theme="c">
+  <div data-role="header">
+    <h1>Apostar</h1>
+    <a href="#panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext">Panel</a>
+  </div>
+  <div data-role="content" >
+  <p id="idPartido" data-theme="d">Match ID</p>
+    <div data-role="fieldcontain">
+      <label for="slider">Goles <span id="cod1">cuadro1</span>:</label>
+      <input type="range" name="slider" id="golesCod1" value="0" min="0" max="10" />
+    </div>
+   <div data-role="fieldcontain">
+      <label for="slider">Goles <span id="cod2">cuadro2</span>:</label>
+      <input type="range" name="slider" id="golesCod2" value="0" min="0" max="10" />
+    </div>
+   	
+    
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Jugador del Partido:</label>
+     <select name="selectmenu" id="bestPlayer">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+   
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Primer Gol:</label>
+     <select name="selectmenu" id="firstGoal">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+ 
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Primera Amarilla:</label>
+     <select name="selectmenu" id="firstYellow">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+  
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Primera Roja:</label>
+     <select name="selectmenu" id="firstRed">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+   
+   <div data-role="controlgroup" data-type="horizontal" data-theme="c">
+     <button data-icon="check" data-iconpos="left" id="apostar">Apostar</button>
+     <button data-icon="delete" data-iconpos="right" id="cancelar">Cancelar</button>
+   </div>
+  
+  </div>
+  <div data-role="footer">
+    <h4>Penca 2015  --  PC</h4>
+  </div>
+</div>
+<div id="perfil" data-role="page" data-theme="a">
+  <div data-role="header">
+    <h1>Perfil</h1>
+    <a href="#panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext">Panel</a>
+  </div>
+  <div data-role="content">
+    <div class="ui-grid-a">
+      <div class="ui-block-a" id="cantApuestas" style="text-align:center">Apuestas</div>
+      <div class="ui-block-b" id="puntos" style="text-align:center">Puntaje</div>
+      <div class="ui-block-a">
+      	<a href="#userBets" data-role="button" data-icon="search" data-iconpos="top"></a>
+       </div>
+       <div class="ui-block-b">
+        <a href="#matches" data-role="button" data-icon="grid" data-iconpos="top"></a>
+      </div>
+      <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Borrar Datos...</a>
+<div data-role="popup" id="popupDialog" data-overlay-theme="d" data-theme="d" data-dismissible="false" style="max-width:300px;">
+    <div data-role="header" data-theme="a">
+  <h1>Borrar Datos?</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <h3 class="ui-title">Esta seguro que desea borar todos los datos?</h3>
+    <p>Esta accion no puede ser revertida.</p>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow" id="borrarTodo">Delete</a>
+    </div>
+</div>
+      
+      
+    </div>
+    
+      
+  
+  </div>
+  <div data-role="footer">
+    <h4>Penca 2015  --  PC</h4>
+  </div>
+</div>
+<div data-role="page" id="userBets">
+  <div data-role="header">
+    <h1>Apuestas Realizadas</h1>
+    <a href="#panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext">Panel</a>
+  </div>
+  <div data-role="content">
+    <div data-role="collapsible-set" id="betsbyuser" data-filter="true">
+      <div data-role="collapsible">
+        <h3>match_id:</h3>
+        <p>result_country1: </p>
+        <p>result_country2: </p>
+        <p>best_player: </p>
+        <p>first_goal_player: </p>
+        <p>first_yellow_card_player: </p>
+         <p>first_red_card_player: </p>
+        <p>date: </p>
+        <p>points: </p>
+        <div data-role="controlgroup" data-type="horizontal">
+          <button data-icon="info" data-iconpos="left">Validar</button>
+          <button data-icon="gear" data-iconpos="right" id="editarApuesta">Editar</button>
+        </div>
+
+        
+      </div>
+    </div>
+  
+  </div>
+  <div data-role="footer">
+    <h4>Penca 2015  --  PC</h4>
+  </div>
+</div>
+<div data-role="page" id="updateBet">
+  <div data-role="header">
+    <h1>Header</h1>
+    <a href="#panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext">Panel</a>
+  </div>
+  <div data-role="content">
+  
+  </div>
+  <div data-role="footer">
+    <h4>Penca 2015  --  PC</h4>
+  </div>
+</div>
+<!--Pagina editar Apuesta-->
+<div data-role="page" id="editarBet">
+  <div data-role="header">
+    <h1>Header</h1>
+    <a href="#panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext">Panel</a>
+  </div>
+ <div data-role="content" >
+  <p id="editidPartido" data-theme="d">Match ID</p>
+    <div data-role="fieldcontain">
+      <label for="slider">Goles <span id="editcod1">cuadro1</span>:</label>
+      <input class="slider" type="range" name="slider" id="editgolesCod1" value="0" min="0" max="10" />
+    </div>
+   <div data-role="fieldcontain">
+      <label for="slider">Goles <span id="editcod2">cuadro2</span>:</label>
+      <input class="slider" type="range" name="slider" id="editgolesCod2" value="0" min="0" max="10" />
+    </div>
+   	
+    
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Jugador del Partido:</label>
+     <select name="selectmenu" id="editbestPlayer">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+   
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Primer Gol:</label>
+     <select name="selectmenu" id="editfirstGoal">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+ 
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Primera Amarilla:</label>
+     <select name="selectmenu" id="editfirstYellow">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+  
+   <div data-role="fieldcontain">
+     <label for="selectmenu" class="select">Primera Roja:</label>
+     <select name="selectmenu" id="editfirstRed">
+       <option value="option1">Option 1</option>
+       <option value="option2">Option 2</option>
+       <option value="option3">Option 3</option>
+     </select>
+   </div>
+   
+   <div data-role="controlgroup" data-type="horizontal" data-theme="c">
+     <button data-icon="check" data-iconpos="left" id="editBet">Editar</button>
+     <button data-icon="delete" data-iconpos="right" id="cancelEdit">Cancelar</button>
+   </div>
+  
+  </div>
+  <div data-role="footer">
+    <h4>Penca 2015  --  PC</h4>
+  </div>
+</div>
+<!--Fin Pagina editar Apuesta-->
+
+</body>
+</html>

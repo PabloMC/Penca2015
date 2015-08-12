@@ -1,0 +1,121 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-Aug-2015, 22:40:39
+    Author     : Pablo
+*/
+
+	
+#matches{background-image: url(../img/Copa-America-574x322.jpg);
+background-repeat:no-repeat;
+background-size:contain;
+background-attachment:scroll;
+}
+.homeScreen {
+    background: url(../img/fondo.png) no-repeat scroll center top rgba(0, 0, 0, 0);
+	background-size: contain;
+    border-bottom: 1px solid #CCCCCC;
+    float: left;
+    height: 380px;
+    /*height: 315px;*/
+    padding: 2%;
+    position: relative;
+    width: 100%;
+}
+.mainBtn {
+	display: block;
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 74%, #ededed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(74%,#ffffff), color-stop(100%,#ededed));
+    background: -webkit-linear-gradient(top,  #ffffff 74%,#ededed 100%);
+    background: -o-linear-gradient(top,  #ffffff 74%,#ededed 100%);
+    background: -ms-linear-gradient(top,  #ffffff 74%,#ededed 100%);
+    background: linear-gradient(to bottom,  #ffffff 74%,#ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+    border: 2px solid #248a90;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow:  2px 2px 0px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:  2px 2px 0px 2px rgba(0, 0, 0, 0.2);
+    color: #092b2e !important;
+    text-decoration: none;
+    font-weight: 400 !important;
+    height: 120px;
+    width: 38%;
+    font-size: 1.1em; 
+    line-height: 1em;
+}
+.mainBtn:active {
+    background: #ededed;
+    background: -moz-linear-gradient(top,  #ededed 0%, #ffffff 26%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(26%,#ffffff));
+    background: -webkit-linear-gradient(top,  #ededed 0%,#ffffff 26%);
+    background: -o-linear-gradient(top,  #ededed 0%,#ffffff 26%);
+    background: -ms-linear-gradient(top,  #ededed 0%,#ffffff 26%);
+    background: linear-gradient(to bottom,  #ededed 0%,#ffffff 26%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 );
+}
+.mainBtn.homeBtn {
+    border: 5px solid #127307;
+    border-radius: 100px 100px 100px 100px;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF !important;
+    font-size: 1em;
+    height: 110px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    top: 20%;
+    width: 110px;
+    z-index: 50;
+}
+.mainBtn.homeBtn:active {
+    background: #64D070;
+    background: -moz-linear-gradient(top,  #64D070 0%, #127307 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#64D070), color-stop(100%,#127307));
+    background: -webkit-linear-gradient(top,  #64D070 0%,#127307 100%);
+    background: -o-linear-gradient(top,  #64D070 0%,#127307 100%);
+    background: -ms-linear-gradient(top, #64D070 0%,#127307 100%);
+    background: linear-gradient(to bottom,  #64D070 0%,#127307 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64D070', endColorstr='#127307',GradientType=0 );
+}
+
+.mainBtn.homeBtn {
+    background: -moz-linear-gradient(bottom,  #127307 0%, #64D070 100%); /* FF 3.6+ */  
+    background: -ms-linear-gradient(bottom,  #127307 0%, #64D070 100%); /* IE10 */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#127307), color-stop(100%,#64D070)); /* Safari 4+, Chrome 2+ */  
+    background: -webkit-linear-gradient(bottom,  #127307 0%,#64D070 100%); /* Safari 5.1+, Chrome 10+ */  
+    background: -o-linear-gradient(bottom,  #127307 0%,#64D070 100%); /* Opera 11.10 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#127307', endColorstr=#64D070); /* IE6 & IE7 */  
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#127307', endColorstr=#64D070)"; /* IE8+ */  
+    background: linear-gradient(to bottom, #127307 0%, #64D070 100%) repeat scroll 0 0 rgba(0, 0, 0, 0); /* the standard */  
+}
+
+.betBtn {
+	position: absolute;
+    right: 3%;
+    top: 40%;
+    text-align: right;
+}
+.confBtn {
+	position: absolute;
+    left: 2%;
+    top: 40%;
+
+}
+.matchBtn {
+	position: absolute;
+    left: 2%;
+    top: 2%;
+}
+.logBtn {
+	position: absolute;
+    right: 3%;
+    top: 2%;
+    text-align: right;
+}
